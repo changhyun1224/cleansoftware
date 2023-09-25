@@ -1,6 +1,6 @@
 package payroll.classification;
 
-import payroll.SalesReceipt;
+import payroll.entity.SalesReceipt;
 
 public class CommissionedClassification extends PaymentClassification {
     private final double salary;

@@ -1,5 +1,6 @@
-package payroll;
+package payroll.entity;
 
+import payroll.UnionAffiliation;
 import payroll.classification.PaymentClassification;
 import payroll.method.PaymentMethod;
 import payroll.schedule.PaymentSchedule;
@@ -8,13 +9,13 @@ public class Employee {
     private PaymentClassification paymentClassification;
     private PaymentSchedule paymentSchedule;
     private PaymentMethod paymentMethod;
-    private final int empId;
+    private final int employeeId;
     private String name;
     private String address;
     private UnionAffiliation unionAffiliation = UnionAffiliation.NO_AFFILIATION;
 
-    public Employee(int empId, String name, String address) {
-        this.empId = empId;
+    public Employee(int employeeId, String name, String address) {
+        this.employeeId = employeeId;
         this.name = name;
         this.address = address;
     }

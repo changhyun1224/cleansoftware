@@ -1,6 +1,6 @@
 package payroll.database;
 
-import payroll.Employee;
+import payroll.entity.Employee;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package payroll.serviceCharge;
+package payroll;
 
 public interface Affiliation {
 }

@@ -1,6 +1,6 @@
 package payroll;
 
-import payroll.serviceCharge.Affiliation;
+import payroll.entity.ServiceCharge;
 
 public class UnionAffiliation implements Affiliation {
 

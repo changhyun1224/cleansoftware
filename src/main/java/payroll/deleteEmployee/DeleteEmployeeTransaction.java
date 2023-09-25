@@ -10,6 +10,7 @@ public class DeleteEmployeeTransaction implements Transaction {
         this.employeeId = employeeId;
     }
 
+
     public void execute() {
         PayrollDatabase database = PayrollDatabase.globalPayrollDatabase;
         database.deleteEmployee(employeeId);
