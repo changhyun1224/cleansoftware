@@ -1,21 +1,23 @@
 package payroll.entity;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Calendar;
 
+@Getter
+@Setter
+@Builder
 public class SalesReceipt {
-    private final Calendar date;
-    private final double amount;
+    private int empId;
+    private long date;
+    private int amount;
 
-    public SalesReceipt(Calendar date, double amount) {
+    public SalesReceipt(int empId, long date, int amount) {
+        this.empId = empId;
         this.date = date;
         this.amount = amount;
     }
 
-    public Calendar getDate() {
-        return date;
-    }
-
-    public double getAmount() {
-        return amount;
-    }
 }

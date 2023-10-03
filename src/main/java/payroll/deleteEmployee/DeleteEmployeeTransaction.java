@@ -4,15 +4,13 @@ import payroll.Transaction;
 import payroll.database.PayrollDatabase;
 
 public class DeleteEmployeeTransaction implements Transaction {
-    private int employeeId;
+    private int itsEmpId;
 
-    public DeleteEmployeeTransaction(int employeeId) {
-        this.employeeId = employeeId;
+    public DeleteEmployeeTransaction(int itsEmpId) {
+        this.itsEmpId = itsEmpId;
     }
 
-
     public void execute() {
-        PayrollDatabase database = PayrollDatabase.globalPayrollDatabase;
-        database.deleteEmployee(employeeId);
+        PayrollDatabase.deleteEmployee(itsEmpId);
     }
 }

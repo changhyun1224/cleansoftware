@@ -1,21 +1,20 @@
 package payroll.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Calendar;
 
+@Getter
+@Setter
 public class TimeCard {
 
-    private final Calendar date;
-    private final double hours;
+    private Long itsDate;
+    private double itsHours;
 
-    public TimeCard(Calendar date, double hours) {
-        this.date = date;
-        this.hours = hours;
-    }
-    public Calendar getDate() {
-        return date;
-    }
-    public double getHours() {
-        return hours;
+    public TimeCard(Long itsDate, double itsHours) {
+        this.itsDate = itsDate;
+        this.itsHours = itsHours;
     }
 
 }

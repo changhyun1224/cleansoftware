@@ -1,4 +1,4 @@
-package payroll;
+package payroll.affiliation;
 
 public interface Affiliation {
 }

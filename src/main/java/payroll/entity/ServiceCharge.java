@@ -1,20 +1,19 @@
 package payroll.entity;
 
-import java.util.Calendar;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
+@Getter
+@Setter
 public class ServiceCharge {
 
-    private final Double amount;
-    private final Calendar date;
+    private double charge;
+    private long date;
 
-    public ServiceCharge(Calendar date, double amount) {
-        this.amount = amount;
+    public ServiceCharge(long date, double charge) {
+        this.charge = charge;
         this.date = date;
     }
-    public Double getAmount() {
-        return amount;
-    }
-    public Calendar getDate() {
-        return date;
-    }
+
 }

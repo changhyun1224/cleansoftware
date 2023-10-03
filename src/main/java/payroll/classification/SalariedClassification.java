@@ -1,11 +1,18 @@
 package payroll.classification;
 
-public class SalariedClassification extends PaymentClassification {
+public class SalariedClassification implements PaymentClassification {
 
-    private final double salary;
+    private double salary;
 
     public SalariedClassification(double salary) {
         this.salary = salary;
     }
 
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
 }

@@ -4,45 +4,44 @@ import payroll.entity.Employee;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class PayrollDatabase {
-    public static PayrollDatabase globalPayrollDatabase = new PayrollDatabase();
 
-    private Map<Integer, Employee> employees = new HashMap<Integer, Employee>();
+    private static Map<Integer, Employee> itsEmployee = new HashMap<>();
+    private static Map<Integer, Employee> itsUnionMember = new HashMap<>();
 
-    public Map<Integer, Employee> unionMembers = new HashMap<Integer, Employee>();
+    public PayrollDatabase() {}
 
-    public Employee getEmployee(int employeeId) {
-        return employees.get(employeeId);
+    public static Employee getEmployee(int empId) {
+        return itsEmployee.get(empId);
     }
 
-    public void addEmployee(int employeeId, Employee employee) {
-        employees.put(employeeId, employee);
+    public static void addEmployee(int empId, Employee employee) {
+        itsEmployee.put(empId, employee);
     }
 
-    public void clear(){
-        employees.clear();
-        unionMembers.clear();
+    public static Employee deleteEmployee(int empId) {
+        return itsEmployee.remove(empId);
     }
 
-    public void deleteEmployee(int employeeId) {
-        employees.put(employeeId, null);
+    public static void clear() {
+        itsEmployee.clear();
     }
 
-    public Employee getUnionMember(int memberId) {
-        return unionMembers.get(memberId);
+    public static Map<Integer, Employee> getAllEmployee() {
+        return itsEmployee;
     }
 
-    public void addUnionMember(int memberId, Employee employee) {
-        unionMembers.put(memberId, employee);
+    public static Employee getUnionMember(int memberId) {
+        return itsUnionMember.get(memberId);
     }
 
-    public void deleteUnionMember(int memberId) {
-        unionMembers.remove(memberId);
+    public static void addUnionMember(int memberId, Employee e) {
+        itsUnionMember.put(memberId, e);
     }
 
-    public Set<Integer> getAllEmployeeIds() {
-        return employees.keySet();
+    public static void removeUnionMember(int memberId) {
+        itsUnionMember.remove(memberId);
     }
+
 }

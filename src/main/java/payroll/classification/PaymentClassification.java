@@ -1,5 +1,5 @@
 package payroll.classification;
 
-public class PaymentClassification {
+public interface PaymentClassification {
 
 }
