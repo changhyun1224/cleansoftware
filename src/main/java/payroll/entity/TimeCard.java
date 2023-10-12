@@ -9,10 +9,10 @@ import java.util.Calendar;
 @Setter
 public class TimeCard {
 
-    private Long itsDate;
+    private Calendar itsDate;
     private double itsHours;
 
-    public TimeCard(Long itsDate, double itsHours) {
+    public TimeCard(Calendar itsDate, double itsHours) {
         this.itsDate = itsDate;
         this.itsHours = itsHours;
     }

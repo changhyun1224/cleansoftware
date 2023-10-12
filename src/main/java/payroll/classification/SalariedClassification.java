@@ -1,5 +1,7 @@
 package payroll.classification;
 
+import payroll.entity.PayCheck;
+
 public class SalariedClassification implements PaymentClassification {
 
     private double salary;
@@ -8,11 +10,8 @@ public class SalariedClassification implements PaymentClassification {
         this.salary = salary;
     }
 
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
+    @Override
+    public double calculatePay(PayCheck pc) {
+        return 0;
     }
 }

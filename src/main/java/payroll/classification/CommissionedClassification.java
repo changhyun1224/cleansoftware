@@ -1,5 +1,6 @@
 package payroll.classification;
 
+import payroll.entity.PayCheck;
 import payroll.entity.SalesReceipt;
 
 import java.util.HashMap;
@@ -37,5 +38,10 @@ public class CommissionedClassification implements PaymentClassification {
 
     public SalesReceipt getSalesReceipt(int empId) {
         return salesReceipts.get(empId);
+    }
+
+    @Override
+    public double calculatePay(PayCheck pc) {
+        return 0;
     }
 }

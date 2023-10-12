@@ -4,7 +4,7 @@ import payroll.database.PayrollDatabase;
 import payroll.deleteEmployee.DeleteEmployeeTransaction;
 import payroll.entity.Employee;
 
-import java.util.Map;
+import java.util.Set;
 
 public class deleteEmployeeTest {
 
@@ -20,7 +20,7 @@ public class deleteEmployeeTest {
         DeleteEmployeeTransaction dt = new DeleteEmployeeTransaction(empId);
         dt.execute();
 
-        Map<Integer, Employee> data = PayrollDatabase.getAllEmployee();
+        Set<Integer> data = PayrollDatabase.getAllEmployee();
 
         Employee e2 = PayrollDatabase.getEmployee(empId);
         Assertions.assertNull(e2);

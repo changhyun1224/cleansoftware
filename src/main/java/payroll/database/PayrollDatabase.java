@@ -2,8 +2,10 @@ package payroll.database;
 
 import payroll.entity.Employee;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class PayrollDatabase {
 
@@ -28,10 +30,6 @@ public class PayrollDatabase {
         itsEmployee.clear();
     }
 
-    public static Map<Integer, Employee> getAllEmployee() {
-        return itsEmployee;
-    }
-
     public static Employee getUnionMember(int memberId) {
         return itsUnionMember.get(memberId);
     }
@@ -44,4 +42,11 @@ public class PayrollDatabase {
         itsUnionMember.remove(memberId);
     }
 
+    public static Set<Integer> getAllEmployee() {
+        return itsEmployee.keySet();
+    }
+
+    public static void getAllEmployeeIds(ArrayList<Integer> empIds) {
+        empIds.addAll(itsEmployee.keySet());
+    }
 }

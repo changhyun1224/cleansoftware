@@ -1,4 +1,5 @@
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import payroll.addEmployee.AddHourlyEmployee;
 import payroll.classification.HourlyClassification;
 import payroll.classification.PaymentClassification;
@@ -7,15 +8,20 @@ import payroll.entity.Employee;
 import payroll.entity.TimeCard;
 import payroll.timcard.TimeCardTransaction;
 
-public class timeCardTransaction {
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+
+public class TimeCardTest {
 
     @Test
-    public void deleteEmployeeTest() throws Exception {
+    public void TimeCardTest() throws Exception {
         int empId = 2;
+        Calendar payDate = new GregorianCalendar(2001, 11, 31);
+
         AddHourlyEmployee t = new AddHourlyEmployee(empId, "Bill", "Home", 15.25);
         t.execute();
 
-        TimeCardTransaction tct = new TimeCardTransaction(empId, 20011031, 8.0);
+        TimeCardTransaction tct = new TimeCardTransaction(empId, payDate, 8.0);
         tct.execute();
 
         Employee e = PayrollDatabase.getEmployee(empId);
@@ -25,7 +31,7 @@ public class timeCardTransaction {
         HourlyClassification hc = (HourlyClassification) pc;
         Assertions.assertEquals(pc, hc);
 
-        TimeCard tc = hc.getTimeCard(20011031);
+        TimeCard tc = hc.getTimeCard(payDate);
         Assertions.assertNotNull(tc);
         Assertions.assertEquals(8.0, tc.getItsHours());
     }

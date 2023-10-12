@@ -7,13 +7,15 @@ import payroll.database.PayrollDatabase;
 import payroll.entity.Employee;
 import payroll.entity.TimeCard;
 
+import java.util.Calendar;
+
 public class TimeCardTransaction implements Transaction {
 
     private int itsEmpId;
-    private long itsDate;
+    private Calendar itsDate;
     private double itsHours;
 
-    public TimeCardTransaction(int itsEmpId, long itsDate, double itsHours) {
+    public TimeCardTransaction(int itsEmpId, Calendar itsDate, double itsHours) {
         this.itsEmpId = itsEmpId;
         this.itsDate = itsDate;
         this.itsHours = itsHours;
