@@ -288,25 +288,6 @@ public class PayEmployeeTest {
         assertEquals((8 * 15.24) - (9.42 + 19.42), pc.getNetPay(), .001);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     private void validateHourlyPaycheck(PaydayTransaction paydayTransaction, int empId, Calendar payDate, double pay) {
         PayCheck payCheck = paydayTransaction.getPayCheck(empId);
         assertEquals(payDate, payCheck.getPayPeriodEndDate());
