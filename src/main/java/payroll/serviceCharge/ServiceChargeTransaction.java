@@ -1,18 +1,22 @@
 package payroll.serviceCharge;
 
+import lombok.Builder;
 import payroll.affiliation.Affiliation;
 import payroll.Transaction;
 import payroll.affiliation.UnionAffiliation;
 import payroll.database.PayrollDatabase;
 import payroll.entity.Employee;
 
+import java.util.Calendar;
+
+@Builder
 public class ServiceChargeTransaction implements Transaction {
 
     private int memberId;
-    private long date;
+    private Calendar date;
     private double charge;
 
-    public ServiceChargeTransaction(int memberId, long date, double charge) {
+    public ServiceChargeTransaction(int memberId, Calendar date, double charge) {
         this.memberId = memberId;
         this.date = date;
         this.charge = charge;

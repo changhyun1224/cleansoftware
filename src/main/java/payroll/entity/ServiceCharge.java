@@ -4,14 +4,16 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Calendar;
+
 @Getter
 @Setter
 public class ServiceCharge {
 
     private double charge;
-    private long date;
+    private Calendar date;
 
-    public ServiceCharge(long date, double charge) {
+    public ServiceCharge(Calendar date, double charge) {
         this.charge = charge;
         this.date = date;
     }

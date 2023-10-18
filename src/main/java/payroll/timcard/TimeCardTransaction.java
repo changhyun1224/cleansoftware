@@ -1,5 +1,6 @@
 package payroll.timcard;
 
+import lombok.Builder;
 import payroll.Transaction;
 import payroll.classification.HourlyClassification;
 import payroll.classification.PaymentClassification;
@@ -9,6 +10,7 @@ import payroll.entity.TimeCard;
 
 import java.util.Calendar;
 
+@Builder
 public class TimeCardTransaction implements Transaction {
 
     private int itsEmpId;

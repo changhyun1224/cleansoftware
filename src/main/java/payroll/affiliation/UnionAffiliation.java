@@ -18,7 +18,7 @@ public class UnionAffiliation implements Affiliation {
     private long date;
     private double charge;
     private double dues;
-    private Map<Long, ServiceCharge> serviceCharges = new HashMap<>();
+    private Map<Calendar, ServiceCharge> serviceCharges = new HashMap<>();
     private int memberId;
     private PaymentClassification classification;
 
@@ -27,7 +27,7 @@ public class UnionAffiliation implements Affiliation {
         this.charge = charge;
     }
 
-    public void addServiceCharge(long date, double charge) {
+    public void addServiceCharge(Calendar date, double charge) {
         serviceCharges.put(date, new ServiceCharge(date, charge));
     }
 
